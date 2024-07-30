@@ -11,7 +11,8 @@ export const tmdbApi = createApi({
 
   endpoints: (builder) => ({
     getPopularMovies: builder.query({
-      query: () => `movie/popular?api_key=${apiKey}&language=es-ES`,
+      query: (page = 1) =>
+        `movie/popular?api_key=${apiKey}&language=es-ES&page=${page}`,
     }),
     getUpcomingMovies: builder.query({
       query: () => `movie/upcoming?api_key=${apiKey}&language=es-ES`,
