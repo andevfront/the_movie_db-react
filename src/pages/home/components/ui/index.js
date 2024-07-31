@@ -1,4 +1,5 @@
 export * from "./HeroCarouselItem";
 export * from "./MovieCard";
 export * from "./SkeletonCard";
-export * from "./TrendingMovies";
+export * from "./NewRelease";
+export * from "./SkeletonNewRelease";

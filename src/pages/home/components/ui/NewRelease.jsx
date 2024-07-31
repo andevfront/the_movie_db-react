@@ -10,18 +10,19 @@ import { decimalRounded } from "../../../../helpers";
 import { notShowing } from "../../../../assets";
 import { Spinner } from "../../../../components";
 
-export const TrendItem = ({
+export const NewRelease = ({
   id,
   title,
   poster_path = notShowing,
   overview,
   vote_average,
   release_date,
+  index,
 }) => {
   const [loadingImage, setLoadingImage] = useState(true);
 
   return (
-    <div className="flex gap-2">
+    <div className="relative flex gap-2">
       <Link
         className="h-36 w-24 min-w-max overflow-hidden rounded"
         to={`movie/${id}`}
@@ -54,15 +55,21 @@ export const TrendItem = ({
           </span>
         </div>
       </div>
+      {!loadingImage && (
+        <span className="pointer-events-none absolute -left-2 -top-2 flex h-10 w-10 items-center justify-center rounded-full border-4 border-slate-900 bg-sky-500 text-sm">
+          #{index + 1}
+        </span>
+      )}
     </div>
   );
 };
 
-TrendItem.propTypes = {
+NewRelease.propTypes = {
   id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   poster_path: PropTypes.string.isRequired,
   overview: PropTypes.string.isRequired,
   vote_average: PropTypes.number.isRequired,
   release_date: PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired,
 };

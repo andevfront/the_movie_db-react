@@ -1,4 +1,4 @@
-import { HeroCarousel, MoviesGrid, TrendingAside } from "./components";
+import { HeroCarousel, MoviesGrid, NowPlayingMoviesAside} from "./components";
 
 export const HomePage = () => {
   return (
@@ -6,7 +6,7 @@ export const HomePage = () => {
       <HeroCarousel />
       <div className="container mx-auto grid grid-cols-12 px-4 xl:gap-10 xl:px-8">
         <MoviesGrid />
-        <TrendingAside />
+        <NowPlayingMoviesAside />
       </div>
     </>
   );
