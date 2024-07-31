@@ -20,6 +20,10 @@ export const tmdbApi = createApi({
     getMovieDetails: builder.query({
       query: (movieId) => `movie/${movieId}?api_key=${apiKey}&language=es-ES`,
     }),
+    getTrendingMovies: builder.query({
+      query: (timeFrame) =>
+        `trending/movie/${timeFrame}?api_key=${apiKey}&language=es-ES`,
+    }),
   }),
 });
 
@@ -27,4 +31,5 @@ export const {
   useGetPopularMoviesQuery,
   useGetUpcomingMoviesQuery,
   useGetMovieDetailsQuery,
+  useGetTrendingMoviesQuery,
 } = tmdbApi;
