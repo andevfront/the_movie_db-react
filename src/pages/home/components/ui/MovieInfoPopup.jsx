@@ -14,11 +14,13 @@ export const MovieInfoPopup = ({ id }) => {
   return (
     <div className="pointer-events-none invisible absolute left-[60%] top-[6%] z-[2] hidden w-72 scale-0 overflow-hidden rounded-lg bg-slate-900 opacity-0 transition-all duration-500 group-hover:visible group-hover:scale-100 group-hover:opacity-100 lg:block">
       <div className="relative">
-        <img
-          className="absolute inset-0 h-full w-full scale-150 object-cover opacity-50 blur-md"
-          src={`https://image.tmdb.org/t/p/w500${poster_path}`}
-          alt={title}
-        />
+        <figure className="absolute inset-0 h-full w-full">
+          <img
+            className="h-full w-full scale-150 object-cover opacity-50 blur-md"
+            src={`https://image.tmdb.org/t/p/w500${poster_path}`}
+            alt={title}
+          />
+        </figure>
         <div className="relative p-4 text-slate-400">
           <h3 className="text-sm font-bold text-white">{title}</h3>
           <div className="my-4 flex items-center gap-4">

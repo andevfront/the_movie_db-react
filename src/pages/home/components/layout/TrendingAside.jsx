@@ -6,7 +6,7 @@ export const TrendingAside = () => {
   const [selectedOption, setSelectedOption] = useState("day");
 
   return (
-    <div className="col-span-12 xl:col-span-2">
+    <div className="col-span-12 xl:col-span-4">
       <h1 className="mb-8 text-2xl font-bold">Tendencias</h1>
       <ul className="mb-6 flex">
         <li className="w-1/2">

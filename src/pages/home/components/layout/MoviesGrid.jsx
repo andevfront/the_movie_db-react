@@ -12,7 +12,7 @@ export const MoviesGrid = () => {
   const { results: movies = [], total_pages = 1 } = data;
 
   return (
-    <div className="col-span-12 xl:col-span-10">
+    <div className="col-span-12 xl:col-span-8">
       <h1 className="mb-8 text-2xl font-bold">Películas Populares</h1>
       {isLoading || isFetching ? (
         <div className="grid grid-cols-12 gap-6">

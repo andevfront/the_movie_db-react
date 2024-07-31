@@ -1,39 +1,50 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { notShowing } from "../../../../assets";
-import { MovieInfoPopup } from "./MovieInfoPopup";
-import { Spinner } from "../../../../components";
-
+import moment from "moment";
+import PropTypes from "prop-types";
 import "animate.css";
 
-export const MovieCard = ({ id, title, poster_path = notShowing }) => {
+import { Spinner } from "../../../../components";
+import { MovieInfoPopup } from "./MovieInfoPopup";
+import { notShowing } from "../../../../assets";
+
+export const MovieCard = ({ id, title, poster_path, release_date }) => {
   const [loadingImage, setLoadingImage] = useState(true);
 
   return (
-    <div className="group relative col-span-12 sm:col-span-6 md:col-span-3">
-      <Link to={`movie/${id}`}>
-        <div className="flex flex-col">
-          {loadingImage && (
-            <div className="flex h-[500px] w-full items-center justify-center sm:h-[450px] md:h-[267px] lg:h-[350px]">
-              <Spinner />
-            </div>
-          )}
-          <figure
-            className={`${loadingImage ? "" : "animate__animated animate__fadeIn bg-black"} h-full w-full overflow-hidden rounded-lg`}
+    <div className="group relative col-span-6 sm:col-span-4 md:col-span-3">
+      <Link
+        to={`/movie/${id}`}
+        className="relative block h-[269px] w-full overflow-hidden rounded-lg transition-all duration-500 hover:opacity-50 sm:h-[304px] md:h-[273px] lg:h-[369px] xl:h-[272px]"
+      >
+        {loadingImage && (
+          <div className="flex h-full w-full items-center justify-center">
+            <Spinner />
+          </div>
+        )}
+        <figure className="h-full w-full">
+          <img
+            className={`${loadingImage ? "hidden" : "animate__animated animate__fadeIn"} h-full w-full object-cover`}
+            src={`${poster_path ? "https://image.tmdb.org/t/p/w500" + poster_path : notShowing}`}
+            alt={title}
+            onLoad={() => setLoadingImage(false)}
+          />
+        </figure>
+        {!loadingImage && (
+          <small
+            className={`${loadingImage ? "hidden" : "animate__animated animate__fadeIn"} absolute bottom-0 right-0 m-2 rounded-full bg-cyan-500 px-2 py-px text-xs`}
           >
-            <img
-              className={`${loadingImage ? "hidden" : "animate__animated animate__fadeIn block"} h-full w-full object-cover transition-all duration-500 group-hover:opacity-50`}
-              src={`https://image.tmdb.org/t/p/w500${poster_path}`}
-              alt={title}
-              onLoad={() => setLoadingImage(false)}
-            />
-          </figure>
-        </div>
-        <h3 className="animate__animated animate__fadeIn line-clamp-1 text-center transition-all duration-500 group-hover:text-cyan-500">
-          {title}
-        </h3>
+            {moment(release_date).format("YYYY")}
+          </small>
+        )}
       </Link>
-      <MovieInfoPopup id={id} />
+      {!loadingImage && <MovieInfoPopup id={id} />}
     </div>
   );
+};
+
+MovieCard.propTypes = {
+  id: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  release_date: PropTypes.string.isRequired,
 };
