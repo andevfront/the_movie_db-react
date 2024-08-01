@@ -1,12 +1,15 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FiArrowRight } from "react-icons/fi";
 import { HiCalendarDays, HiOutlineClock } from "react-icons/hi2";
 import moment from "moment";
 import PropTypes from "prop-types";
+import "animate.css";
 
 import { useGetMovieDetailsQuery } from "../../../../store";
 
 export const HeroCarouselItem = ({ id }) => {
+  const [loadingImage, setLoadingImage] = useState(true);
   const { data: movie = {} } = useGetMovieDetailsQuery(id);
 
   const {
@@ -23,14 +26,15 @@ export const HeroCarouselItem = ({ id }) => {
     <section className="relative h-full w-full after:absolute after:inset-0 after:h-full after:w-full after:bg-[linear-gradient(to_bottom,_rgba(8,_15,_40,_0)_0%,_rgba(15,_23,_42,_1)_100%)] after:content-['']">
       <figure className="absolute h-full w-full after:absolute after:inset-0 after:h-full after:w-full after:bg-black/50">
         <img
-          className="h-full w-full object-cover"
+          className={`${loadingImage ? "" : "animate__animated animate__fadeIn"} h-full w-full object-cover`}
           src={`https://image.tmdb.org/t/p/w1280${backdrop_path}`}
           alt={title}
+          onLoad={() => setLoadingImage(false)}
         />
       </figure>
       <div className="container relative z-[5] mx-auto flex h-full items-center px-4 xl:px-8">
         <div className="grid gap-20 sm:grid-cols-6 lg:grid-cols-12">
-          <div className="col-span-full text-slate-400 sm:col-span-6">
+          <div className="animate__animated animate__fadeIn col-span-full text-slate-400 sm:col-span-6">
             <h1 className="text-5xl font-bold uppercase text-white">{title}</h1>
             <span className="text-xl italic">{original_title}</span>
             <div className="my-4 flex items-center gap-4">
