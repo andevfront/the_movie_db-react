@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { Backdrop } from "./components";
+import { Backdrop, MovieOverview } from "./components";
 import { useGetMovieDetailsQuery } from "../../store";
 
 export const MoviePage = () => {
@@ -11,6 +11,9 @@ export const MoviePage = () => {
   return (
     <>
       <Backdrop backdrop_path={backdrop_path} />
+      <div className="container relative mx-auto px-4 pt-32 xl:px-8">
+        <MovieOverview id={id} />
+      </div>
     </>
   );
 };
