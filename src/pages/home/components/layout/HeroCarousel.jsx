@@ -1,6 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, Pagination } from "swiper/modules";
-
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/pagination";
@@ -12,12 +11,7 @@ export const HeroCarousel = () => {
   const { data = {}, isLoading } = useGetPopularMoviesQuery();
   const { results: movies = [] } = data;
 
-  if (isLoading)
-    return (
-      <>
-        <SkeletonHeroCarouselItem />
-      </>
-    );
+  if (isLoading) return <SkeletonHeroCarouselItem />;
 
   return (
     <Swiper

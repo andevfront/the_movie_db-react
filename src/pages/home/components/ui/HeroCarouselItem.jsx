@@ -4,8 +4,10 @@ import { FiArrowRight } from "react-icons/fi";
 import { HiCalendarDays, HiOutlineClock } from "react-icons/hi2";
 import moment from "moment";
 import PropTypes from "prop-types";
+import "moment/dist/locale/es";
 import "animate.css";
 
+import { Spinner } from "../../../../components";
 import { useGetMovieDetailsQuery } from "../../../../store";
 
 export const HeroCarouselItem = ({ id }) => {
@@ -25,8 +27,13 @@ export const HeroCarouselItem = ({ id }) => {
   return (
     <section className="relative h-full w-full after:absolute after:inset-0 after:h-full after:w-full after:bg-[linear-gradient(to_bottom,_rgba(8,_15,_40,_0)_0%,_rgba(15,_23,_42,_1)_100%)] after:content-['']">
       <figure className="absolute h-full w-full after:absolute after:inset-0 after:h-full after:w-full after:bg-black/50">
+        {loadingImage && (
+          <div className="flex h-full w-full items-center justify-center">
+            <Spinner />
+          </div>
+        )}
         <img
-          className={`${loadingImage ? "" : "animate__animated animate__fadeIn"} h-full w-full object-cover`}
+          className={`${loadingImage ? "hidden" : "animate__animated animate__fadeIn"} h-full w-full object-cover`}
           src={`https://image.tmdb.org/t/p/w1280${backdrop_path}`}
           alt={title}
           onLoad={() => setLoadingImage(false)}
@@ -40,7 +47,7 @@ export const HeroCarouselItem = ({ id }) => {
             <div className="my-4 flex items-center gap-4">
               <span className="flex items-center gap-1 text-xs">
                 <HiCalendarDays className="h-6 w-6 text-white" />
-                {moment(release_date).format("MMMM D, YYYY")}
+                {moment(release_date).format("D [de] MMMM [de] YYYY")}
               </span>
               <span className="flex items-center gap-1 text-xs">
                 <HiOutlineClock className="h-6 w-6 text-white" />

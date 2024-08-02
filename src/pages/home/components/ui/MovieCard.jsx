@@ -32,7 +32,7 @@ export const MovieCard = ({ id, title, poster_path, release_date }) => {
         </figure>
         {!loadingImage && (
           <small
-            className={`${loadingImage ? "hidden" : "animate__animated animate__fadeIn"} absolute bottom-0 right-0 m-2 rounded-full bg-cyan-500 px-2 py-px text-xs`}
+            className={`${loadingImage ? "hidden" : "animate__animated animate__fadeIn"} absolute bottom-0 right-0 m-2 rounded-full bg-sky-500 px-2 py-px text-xs`}
           >
             {moment(release_date).format("YYYY")}
           </small>

@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, ScrollRestoration } from "react-router-dom";
 import { Footer, Header } from "../components";
 
 export const LayoutDefault = () => {
@@ -7,6 +7,7 @@ export const LayoutDefault = () => {
       <Header />
       <Outlet />
       <Footer />
+      <ScrollRestoration />
     </>
   );
 };

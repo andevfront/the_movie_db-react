@@ -13,17 +13,15 @@ export const SkeletonHeroCarouselItem = () => {
               duration={0.5}
             >
               <Skeleton className="h-11 w-[100%] rounded-lg" />
-              <Skeleton className="mb-2 h-11 w-[50%] rounded-lg" />
               <Skeleton className="h-6 w-[25%] rounded-lg" />
               <div className="my-4 flex items-center gap-4">
                 <Skeleton className="h-7 w-20 rounded-lg" />
                 <Skeleton className="h-7 w-20 rounded-lg" />
               </div>
-              <Skeleton className="h-4 w-[100%] rounded-lg" />
-              <Skeleton className="h-4 w-[100%] rounded-lg" />
-              <Skeleton className="h-4 w-[80%] rounded-lg" />
-              <Skeleton className="h-4 w-[50%] rounded-lg" />
-              <Skeleton className="my-4 h-6 w-[150px] rounded-lg" />
+              <Skeleton className="h-4 w-[100%] rounded" />
+              <Skeleton className="h-4 w-[80%] rounded" />
+              <Skeleton className="h-4 w-[50%] rounded" />
+              <Skeleton className="my-4 h-6 w-[150px] rounded" />
               <Skeleton className="my-4 h-[42px] w-[130px] rounded-lg" />
             </SkeletonTheme>
           </div>
