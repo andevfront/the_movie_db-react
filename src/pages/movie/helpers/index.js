@@ -5,5 +5,6 @@ export * from "./getDirector";
 export * from "./getLanguageNameInSpanish";
 export * from "./getMovieStatusLabel";
 export * from "./getProductionCompanyNames";
+export * from "./getTrailerId";
 export * from "./roundedInteger";
 export * from "./scaleAndRound";
