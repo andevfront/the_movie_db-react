@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import {
   Backdrop,
@@ -5,13 +6,20 @@ import {
   MovieOverview,
   MovieMultimedia,
 } from "./components";
+
 import { useGetMovieDetailsQuery } from "../../store";
 
 export const MoviePage = () => {
   const { id } = useParams();
 
   const { data: movie = {} } = useGetMovieDetailsQuery(id);
-  const { backdrop_path } = movie;
+  const { backdrop_path, title } = movie;
+
+  useEffect(() => {
+    if (title) {
+      document.title = `${title} - TMDB`;
+    }
+  }, [title]);
 
   return (
     <>
