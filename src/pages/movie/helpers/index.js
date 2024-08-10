@@ -1,3 +1,4 @@
+export * from "./filterImages";
 export * from "./formatCurrency";
 export * from "./formatDuration";
 export * from "./getCast";
