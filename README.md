@@ -1,4 +1,4 @@
-🎞 TMDB
+# 🎞 TMDB
 
 Un catálogo de películas donde los usuarios pueden consultar las películas más populares, top de estreno, buscar películas y ver detalles de ellas. Todos los datos se obtienen de la api [The Movie DB](https://www.themoviedb.org).
 
