@@ -2,12 +2,13 @@
 
 Un catálogo de películas donde los usuarios pueden consultar las películas más populares, top de estreno, buscar películas y ver detalles de ellas. Todos los datos se obtienen de la api [The Movie DB](https://www.themoviedb.org).
 
-Para esta app se utilizo:
+Tecnologías y Herramientas utilizadas:
 
-- React + Vite
-- Redux Toolkit Query
-- React Router DOM
-- Tailwind CSS
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Redux](https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-1e293b?style=for-the-badge&logo=tailwind-css&logoColor=38bdf8)
 
 ---
 ### Demo
