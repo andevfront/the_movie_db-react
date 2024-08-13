@@ -1,1 +1,1 @@
-export * from "./MovieMultimedia";
+export * from "./MovieGallery";

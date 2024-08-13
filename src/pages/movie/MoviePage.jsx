@@ -4,9 +4,8 @@ import {
   Backdrop,
   MovieDetails,
   MovieOverview,
-  MovieMultimedia,
+  MovieGallery,
 } from "./components";
-
 import { useGetMovieDetailsQuery } from "../../store";
 
 export const MoviePage = () => {
@@ -28,7 +27,7 @@ export const MoviePage = () => {
         <MovieOverview id={id} />
         <div className="my-10 grid grid-cols-3 gap-10 lg:grid-cols-12">
           <MovieDetails {...movie} />
-          <MovieMultimedia id={id} />
+          <MovieGallery id={id} />
         </div>
       </div>
     </>

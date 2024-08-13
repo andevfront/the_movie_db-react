@@ -12,7 +12,7 @@ body {
   @apply flex min-h-screen flex-col;
 }
 
-.swiper {
+/* .swiper {
   @apply h-[750px] w-full;
 }
 
@@ -37,4 +37,4 @@ body {
 }
 .swiper-pagination-bullet-active {
   @apply h-[12px] w-[30px] rounded-[10px] bg-sky-500;
-}
+} */
