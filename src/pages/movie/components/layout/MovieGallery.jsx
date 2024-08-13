@@ -41,7 +41,7 @@ export const MovieGallery = ({ id }) => {
   }, [mainSwiper, thumbsSwiper]);
 
   return (
-    <div className="gallery-container col-span-9">
+    <div className="col-span-9">
       <MainSwiper
         trailerId={trailerId}
         trailers={trailers}

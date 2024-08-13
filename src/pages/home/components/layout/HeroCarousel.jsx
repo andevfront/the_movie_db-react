@@ -6,6 +6,7 @@ import "swiper/css/pagination";
 
 import { useGetPopularMoviesQuery } from "../../../../store";
 import { HeroCarouselItem, SkeletonHeroCarouselItem } from "../ui";
+import styles from "../../styles/swiper-slider.module.css";
 
 export const HeroCarousel = () => {
   const { data = {}, isLoading } = useGetPopularMoviesQuery();
@@ -15,7 +16,7 @@ export const HeroCarousel = () => {
 
   return (
     <Swiper
-      className="relative"
+      className={styles.heroSwiper}
       modules={[Autoplay, EffectFade, Pagination]}
       effect="fade"
       loop={movies.length >= 5}

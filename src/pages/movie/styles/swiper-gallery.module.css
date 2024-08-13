@@ -1,0 +1,43 @@
+.mySwiper {
+  @apply h-4/5 w-full overflow-hidden rounded-lg;
+}
+
+.mySwiper .swiperSlide,
+.mySwiper2 .swiperSlide2 {
+  @apply overflow-hidden rounded-lg;
+}
+
+.mySwiper figure,
+.mySwiper2 figure {
+  @apply h-full w-full;
+}
+
+.mySwiper figure > img,
+.mySwiper2 figure > img {
+  @apply h-full w-full object-cover hover:opacity-100;
+}
+
+.mySwiper2 {
+  @apply px-1 !important;
+  @apply h-[30%] grow py-[10px] xs:h-1/5;
+}
+
+.mySwiper2 .swiperSlide2 {
+  @apply bg-black;
+}
+
+.mySwiper2 figure {
+  @apply opacity-50;
+}
+
+.mySwiper2 figure > img {
+  @apply hover:opacity-50;
+}
+
+:global(.swiper-slide-thumb-active) {
+  @apply h-full w-1/4 bg-black outline outline-1 outline-sky-500;
+}
+
+:global(.swiper-slide-thumb-active figure) {
+  @apply opacity-100 !important;
+}

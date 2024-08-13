@@ -11,30 +11,3 @@ body {
 #root {
   @apply flex min-h-screen flex-col;
 }
-
-/* .swiper {
-  @apply h-[750px] w-full;
-}
-
-.swiper-slide > img {
-  @apply h-full w-full object-cover;
-}
-
-.swiper-slide-visible {
-  @apply bg-black;
-}
-.swiper-slide-visible > img {
-  @apply opacity-25;
-}
-
-.swiper-horizontal > .swiper-pagination-bullets,
-.swiper-pagination-bullets.swiper-pagination-horizontal {
-  @apply bottom-[100px] left-auto right-auto top-auto w-full sm:right-24 sm:w-auto;
-}
-
-.swiper-pagination-bullet {
-  @apply mx-[5px] my-0 h-[12px] w-[12px] rounded-[50%] bg-white transition-all duration-300 ease-linear;
-}
-.swiper-pagination-bullet-active {
-  @apply h-[12px] w-[30px] rounded-[10px] bg-sky-500;
-} */
