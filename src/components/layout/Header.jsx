@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 import { logo } from "../../assets";
+import { Search } from "../ui";
 
 export const Header = () => {
   return (
@@ -11,6 +12,7 @@ export const Header = () => {
             <img src={logo} alt="logo" className="max-h-12 w-48" />
           </figure>
         </Link>
+        <Search />
       </div>
     </header>
   );

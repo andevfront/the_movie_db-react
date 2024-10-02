@@ -6,31 +6,40 @@ export const tmdbApi = createApi({
   reducerPath: "tmdb",
 
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://api.themoviedb.org/3/movie/",
+    baseUrl: "https://api.themoviedb.org/3/",
   }),
 
   endpoints: (builder) => ({
     getPopularMovies: builder.query({
       query: (page = 1) =>
-        `popular?api_key=${apiKey}&language=es-ES&page=${page}`,
+        `movie/popular?api_key=${apiKey}&language=es-ES&page=${page}`,
     }),
     getUpcomingMovies: builder.query({
-      query: () => `upcoming?api_key=${apiKey}&language=es-ES`,
+      query: () => `movie/upcoming?api_key=${apiKey}&language=es-ES`,
     }),
     getMovieDetails: builder.query({
-      query: (movieId) => `${movieId}?api_key=${apiKey}&language=es-ES`,
+      query: (movieId) => `movie/${movieId}?api_key=${apiKey}&language=es-ES`,
     }),
     getMovieVideos: builder.query({
-      query: (movieId) => `${movieId}/videos?api_key=${apiKey}&language=es-MX`,
+      query: (movieId) =>
+        `movie/${movieId}/videos?api_key=${apiKey}&language=es-MX`,
     }),
     getMovieImages: builder.query({
-      query: (movieId) => `${movieId}/images?api_key=${apiKey}`,
+      query: (movieId) => `movie/${movieId}/images?api_key=${apiKey}`,
     }),
     getMovieCredits: builder.query({
-      query: (movieId) => `${movieId}/credits?api_key=${apiKey}&language=es-ES`,
+      query: (movieId) =>
+        `movie/${movieId}/credits?api_key=${apiKey}&language=es-ES`,
     }),
     getNowPlayingMovies: builder.query({
-      query: () => `now_playing?api_key=${apiKey}&language=es-ES`,
+      query: () => `movie/now_playing?api_key=${apiKey}&language=es-ES`,
+    }),
+    getMovieDetails: builder.query({
+      query: (movieId) => `movie/${movieId}?api_key=${apiKey}&language=es-ES`,
+    }),
+    searchMovies: builder.query({
+      query: (searchTerm) =>
+        `search/movie?api_key=${apiKey}&language=es-ES&query=${searchTerm}`,
     }),
   }),
 });
@@ -43,4 +52,5 @@ export const {
   useGetMovieImagesQuery,
   useGetMovieCreditsQuery,
   useGetNowPlayingMoviesQuery,
+  useSearchMoviesQuery,
 } = tmdbApi;
