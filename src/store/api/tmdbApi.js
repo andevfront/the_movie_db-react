@@ -38,8 +38,8 @@ export const tmdbApi = createApi({
       query: (movieId) => `movie/${movieId}?api_key=${apiKey}&language=es-ES`,
     }),
     searchMovies: builder.query({
-      query: (searchTerm) =>
-        `search/movie?api_key=${apiKey}&language=es-ES&query=${searchTerm}`,
+      query: ({ searchTerm, page = 1 }) =>
+        `search/movie?api_key=${apiKey}&language=es-ES&query=${searchTerm}&page=${page}`,
     }),
   }),
 });

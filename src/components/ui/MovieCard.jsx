@@ -4,15 +4,24 @@ import moment from "moment";
 import PropTypes from "prop-types";
 import "animate.css";
 
-import { Spinner } from "../../../../components";
 import { MovieInfoPopup } from "./MovieInfoPopup";
-import { notShowing } from "../../../../assets";
 
-export const MovieCard = ({ id, title, poster_path, release_date }) => {
+import { Spinner } from "./Spinner";
+import { notShowing } from "../../assets";
+
+export const MovieCard = ({
+  id,
+  title,
+  poster_path,
+  release_date,
+  searchView,
+}) => {
   const [loadingImage, setLoadingImage] = useState(true);
 
   return (
-    <div className="group relative col-span-6 sm:col-span-4 md:col-span-3">
+    <div
+      className={`group relative col-span-6 sm:col-span-4 md:col-span-3 ${searchView ? "xl:col-span-2" : ""}`}
+    >
       <Link
         to={`/movie/${id}`}
         className="relative block h-[269px] w-full overflow-hidden rounded-lg transition-all duration-500 hover:opacity-50 sm:h-[304px] md:h-[273px] lg:h-[369px] xl:h-[272px]"
@@ -47,4 +56,5 @@ MovieCard.propTypes = {
   id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   release_date: PropTypes.string.isRequired,
+  searchView: PropTypes.bool,
 };

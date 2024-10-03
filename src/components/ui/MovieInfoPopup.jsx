@@ -2,8 +2,8 @@ import PropTypes from "prop-types";
 import moment from "moment";
 import { HiCalendarDays, HiOutlineClock, HiStar } from "react-icons/hi2";
 
-import { useGetMovieDetailsQuery } from "../../../../store";
-import { decimalRounded } from "../../../../helpers";
+import { useGetMovieDetailsQuery } from "../../store";
+import { decimalRounded } from "../../helpers";
 
 export const MovieInfoPopup = ({ id }) => {
   const { data: movie = {} } = useGetMovieDetailsQuery(id);
