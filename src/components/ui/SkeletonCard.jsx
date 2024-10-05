@@ -21,8 +21,5 @@ export const SkeletonCard = ({ searchView }) => {
 };
 
 SkeletonCard.propTypes = {
-  id: PropTypes.number.isRequired,
-  title: PropTypes.string.isRequired,
-  release_date: PropTypes.string.isRequired,
   searchView: PropTypes.bool,
 };
