@@ -21,6 +21,16 @@ export const MovieGallery = ({ id }) => {
   const trailerId = useMemo(() => getTrailerId(trailers), [trailers]);
   const filteredBackdrops = useMemo(() => filterImages(backdrops), [backdrops]);
 
+  const showNavigationButtons =
+    trailers.length > 1 || filteredBackdrops.length > 1;
+
+  useEffect(() => {
+    if (mainSwiper) {
+      // Reinicia el Swiper a la primera slide al cambiar de película
+      mainSwiper.slideTo(0, 0); // El segundo parámetro "0" asegura que no haya transición
+    }
+  }, [id, mainSwiper]); // Dependencia de "id" para detectar cambios de película
+
   useEffect(() => {
     if (mainSwiper && thumbsSwiper && mainSwiper.thumbs) {
       mainSwiper.thumbs.swiper = thumbsSwiper;
@@ -56,7 +66,9 @@ export const MovieGallery = ({ id }) => {
         filteredBackdrops={filteredBackdrops}
         setThumbsSwiper={setThumbsSwiper}
       />
-      <SwiperNavigationButtons />
+      <div className={showNavigationButtons ? "" : "hidden"}>
+        <SwiperNavigationButtons />
+      </div>
     </div>
   );
 };
